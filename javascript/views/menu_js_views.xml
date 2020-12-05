@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="js_template" model="ir.actions.client">
+       <field name="name">JS</field>
+       <field name="tag">popup_id</field>
+       <field name="target">main</field>
+    </record>
+    <menuitem id="menu_pop_up" name="Popup" action="js_template"/>
+</odoo>

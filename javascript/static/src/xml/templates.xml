@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+     <t t-name="pop_up">
+        <div role="dialog" class="modal-dialog">
+            <div class="popup popup-barcode" style="height: 200px;width:
+                30%;background-color: #93BCC4">
+                <header class="title">Unknown Barcode
+
+                </header>
+                <main class="body">
+                   There is no such a barcode
+                </main>
+                <footer class="footer">
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </footer>
+            </div>
+       </div>
+    </t>
+
+</templates>
