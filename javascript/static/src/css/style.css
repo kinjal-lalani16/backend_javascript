@@ -1,0 +1,40 @@
+.same{
+    padding-top:20px;
+}
+.slider_img {
+    background-image: url('../img/bg_image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px !important;
+}
+.rowclass{
+    height: 100vh;
+    width:100vw;
+}
+
+.h2class{
+    padding-top: 10px;
+    margin-top: 30px;
+    color: white;
+}
+
+.button1 {
+  background-color: #F0FF47;
+  color: black;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+}
+
+.button2{
+    background-color: #67737E;
+
+    transition-duration: 0.4s;
+}
+.button2:hover{
+    border: 2px solid white;
+}
+
+.button1:hover {
+  background-color: #67737E;
+  color: white;
+}

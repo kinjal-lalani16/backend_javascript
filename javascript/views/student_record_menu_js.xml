@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="student_template" model="ir.actions.client">
+       <field name="name">JS</field>
+       <field name="tag">welcome_action</field>
+       <field name="target">main</field>
+    </record>
+    <menuitem id="record" name="Student record" action="student_template"/>
+</odoo>

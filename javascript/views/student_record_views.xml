@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree view -->
+        <record id="student_record_tree_view" model="ir.ui.view">
+            <field name="name">Students</field>
+            <field name="model">student.record</field>
+            <!-- <field name="priority" eval="8" />-->
+            <field name="arch" type="xml">
+                <tree string="Student">
+                    <field name="student_id" />
+                    <field name="last_name" />
+                    <field name="student_age" />
+                    <field name="student_gender"/>
+                    <field name="student_dob" />
+                    <field name="student_blood_group" />
+                    <field name="student_email"/>
+                    <!-- <field name="profesor_id" /> -->
+                    <field name="student_photo" widget="image"
+                        class="oe_left oe_avatar" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search view -->
+         <record id="student_record_search_view" model="ir.ui.view">
+            <field name="name">student.record.search.view</field>
+            <field name="model">student.record</field>
+            <field name="arch" type="xml">
+                <search string="Search student">
+                    <field name="student_id" filter_domain="['|', ('student_id', 'ilike', self), ('student_age', 'ilike', self)]"/>
+                    <field name="student_age"/>
+                    <separator/>
+                    <filter string="Male" domain="[('student_gender', '=', 'm')]" name="male"/>
+                    <filter string="Female" domain="[('student_gender', '=', 'f')]" name="female"/>
+                    <filter string="Others" domain="[('student_gender', '=', 'o')]" name="others"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Gender" name="gender" context="{'group_by': 'student_gender'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Kanban view -->
+        <record id="student_record_kanban_view" model="ir.ui.view">
+            <field name="name">student.record.kanban.view</field>
+            <field name="model">student.record</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name='id'/>
+                    <field name="student_photo"/>
+                    <field name="student_id"/>
+                    <field name="student_email"/>
+                    <field name="student_dob"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt="Avatar"
+                                    t-att-src="kanban_image('student.record', 'student_photo',record.id.raw_value)"
+                                    class="o_image_64_contain"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>
+                                            <strong>
+                                                <field name="student_id"/>
+                                            </strong>
+                                        </li>
+                                        <li>Email:
+                                            <field name="student_email"/>
+                                        </li>
+                                        <li>dob:
+                                            <field name="student_dob"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    <!-- Form view -->
+        <record id="student_record_form_view" model="ir.ui.view">
+            <field name="name">Students</field>
+            <field name="model">student.record</field>
+<!-- <field name="priority" eval="8" />-->
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <sheet>
+                        <div>
+                            <h1>
+                                <field name="roll_no" readonly="1"/>
+                            </h1>
+                            <group>
+                                <group>
+                                    <field name="student_photo" widget="image"
+                                        class="oe_left oe_avatar" />
+                                    <field name="student_id"/>
+                                    <field name="last_name"/>
+                                   <!--  <field name="profesor_id" context="{'profesor_id':'True'}" options="{'no_create': True, 'no_create_edit':True}"/> -->
+                                    <!-- <field name="gender" readonly="1"/> -->
+                                    <field name="student_email"
+                                        placeholder="example123@gmail.com"/>
+                                    <field name="school_name"/>
+                                </group>
+                                <group>
+                                    <field name="student_dob"/>
+                                    <field name="student_blood_group"/>
+                                    <field name="student_age"/>
+                                    <field name="student_gender"/>
+                                    <field name="school_type"/>
+                                    <field name="auto_rank"/>
+                                </group>
+                            </group>
+                            <!-- <group>
+                                <field name="subject_ids"
+                                    widget="many2many_tags"/>
+                            </group> -->
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Menu -->
+        <record model="ir.actions.act_window" id="action_view_students">
+            <field name="name">Students</field>
+            <field name="res_model">student.record</field>
+           <!--  <field name="view_type">form</field> -->
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new student
+                </p>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <menuitem id="menu_school" name="school" />
+        <menuitem id="school_student" name="Students" parent="javascript.menu_school"
+         action="action_view_students"/>
+    </data>
+</odoo>
+
+
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template xml:space="preserve">
+    <t t-name="HelloWorldTemplate">
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Hello World</h1>
+                <a class="fa fa-7x button_clickable fa-sign-in btn-secondary" aria-label="Sign in" title="Sign in"/>
+                <h3 class="mt0 mb0 text-muted">Click to
+                    <b>check in</b>
+                </h3>
+                <p>Welcome to the school</p>
+            </div>
+        </div>
+
+    </t>
+
+    <t t-name="ClickTemplate">
+
+        <div class="jumbotron">
+            <div class="container">
+                <center><h1>Students Info</h1></center>
+            </div>
+            <table class="table table-sm table-bordered text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Date of birth</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="student" t-as="doc">
+                        <tr class="table-info">
+                                <!-- <h1> HEllo </h1>
+                                <h3><span><t t-field="doc.student_id"/></span></h3> -->
+                            <td><t t-esc="doc.student_id[1]"/></td>
+                            <td><t t-esc="doc.student_gender"/></td>
+                            <td><t t-esc="doc.student_age"/></td>
+                            <td><t t-esc="doc.student_dob"/></td>
+                            <td><t t-esc="doc.student_email"/></td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+
+    </t>
+
+</template>
+
+
