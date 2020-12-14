@@ -3,43 +3,78 @@
     <data>
         <template id="edit_homepage" inherit_id="website.homepage">
             <xpath expr="//div[@id='wrap']" position="replace">
-                <t t-call="web.html_container">
-                    <div class="oe_structure" id="wrap">
-                        <div class="container">
-                            <div class="row slider_img">
-                                <div class="col-md-6">
-                                    <h2 class="h2class">Welcome to Blue Hill</h2>
-                                    <h4 class="h2class">Blue Hill Helicopter Flight School has been training all kinds of helicopter pilots since 1999.</h4>
-                                    <div class="same">
-                                        <a class="button1">
-                                            Get in touch
-                                        </a>
-                                    </div>
+
+                <div class="oe_structure" id="wrap">
+                    <div class="container">
+                        <div class="row slider_img ">
+                            <div class="col-md-6 ">
+                                <h1 class="h2class offset-top-30">Welcome to Blue Hill</h1>
+                                <h4 class="h2class">Blue Hill Helicopter Flight School has been training all kinds of helicopter pilots since 1999.</h4>
+                                <div class="same">
+                                    <a class="button1">
+                                        Get in touch
+                                    </a>
                                 </div>
                             </div>
-                            <div class="row mt32">
-                                <div class="col-md-4">
-                                    <div class="box-icon-inner decorate-triangle decorate-color-secondary">
-                                        <span class="icon-xl text-primary linearicons-users2">
-                                        </span>
-                                    </div>
-                                    <div class="box-icon-caption">
-                                        <h4>Best Instructors</h4>
-                                        <p>Our helicopter flight instructors are carefully selected and adhere to the highest standards of the industry.</p>
-                                    </div>
+                        </div>
+                        <div class="row mt32">
+                            <div class="col-md-4 box-icon-classic">
+                                <div class="box-icon-caption">
+                                    <span class="icon-xl text-primary fa fa-users fa-2x"></span>
+
+                                    <h4>Best Instructors</h4>
+                                    <p>Our helicopter flight instructors are carefully selected and adhere to the highest standards of the industry.</p>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4 box-icon-classic">
+                                <div class="box-icon-classic">
+                                    <span class="icon-xl text-primary fa fa-map-marker fa-2x"></span>
                                     <h4>Exciting Location</h4>
                                     <p>We're conveniently located at LA International Airport, providing students with the best experience.</p>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4 box-icon-classic">
+                                <div class="box-icon-classic">
+                                    <span class="icon-xl text-primary fa fa-paper-plane-o fa-2x"></span>
                                     <h4>Modern Helicopters</h4>
                                     <p>Our flight school has the best and the most diverse fleet of helicopters in California as well as simulators.</p>
                                 </div>
                             </div>
                         </div>
+                        <div class="row bg-color">
+                            <div class="col-md-12">
+                                <h1 class="h1class">
+                                    <hr class="new1"/>
+                                        Our courses
+                                    <hr class="new1"/>
+                                </h1>
+                            </div>
+                            <div class="col-md-12 center">
+                                <p class="content">Our helicopter flight school offers a variety of courses with license exams for all kinds of pilots. You can learn more about each course of Blue Hill by browsing our website.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <!-- <div class="col-md-6 card_image">
+                                <img src="javascript/static/src/img/helicopter.jpg"/>
+                            </div> -->
+
+                            <div class="col-md-6 card_image">
+                                <img src="javascript/static/src/img/helicopter3.jpg"/>
+                            </div>
+                            <div class="col-md-6 card_image">
+                                <img src="javascript/static/src/img/helicopter2.jpg"/>
+                            </div>
+                            <!-- <div class="col-md-6" style="background-color:red;">
+                            </div>
+                            <div class="col-md-6" style="background-color:green;">
+                            </div>
+                            <div class="col-md-6" style="background-color:orange;">
+                            </div> -->
+                        </div>
                     </div>
-                </t>
+                </div>
+
 
         </xpath>
         </template>

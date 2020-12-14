@@ -11,12 +11,12 @@
     'data': [
         'security/ir.model.access.csv',
         'data/website_home.xml',
-
         'views/assets.xml',
         'views/menu_js_views.xml',
         'views/student_record_views.xml',
         'views/student_record_menu_js.xml',
         'views/website_home_template.xml',
+        'views/snippets.xml',
     ],
     'demo': [
         'demo/demo.xml',
